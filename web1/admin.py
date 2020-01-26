@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import books_taken,books_requested
+from .models import books_taken,books_requested,books_available
 # Register your models here.
 
 
@@ -10,3 +10,4 @@ class libAdmin(admin.ModelAdmin):
 	]
 admin.site.register(books_taken,libAdmin)
 admin.site.register(books_requested)
+admin.site.register(books_available)

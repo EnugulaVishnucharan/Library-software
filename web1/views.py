@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
-from .models import books_taken,books_requested
+from .models import books_taken,books_requested,books_available
 import requests
 import speech_recognition as sr
 from bs4 import BeautifulSoup
@@ -13,7 +13,7 @@ import urllib.request
 def homepage(request):
 	return render(request=request,
 			template_name="web1/home.html",
-			context={"context1":books_taken.objects.all,"context2":books_requested.objects.all})
+			context={"context1":books_taken.objects.all,"context2":books_taken.objects.all})
 
 
 def logout_request(request):
@@ -77,3 +77,10 @@ def output(request):
 		except:
 			text='Sorry cannot recognize your voice'
 	return render(request,'web1/home.html',{'text':text})
+	
+	
+	
+def transaction(request):
+	return render(request=request,
+			template_name="web1/transaction.html",
+			context={"context1":books_taken.objects.all})

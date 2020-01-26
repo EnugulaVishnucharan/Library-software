@@ -25,6 +25,7 @@ urlpatterns = [
 	path('',views.homepage,name='homepage'),
 	path("logout/", views.logout_request, name="logout"),
 	path("login/", views.login_request, name="login"),
+	path("transaction/", views.transaction, name="transaction"),
 	url(r'^$', views.button),
 	url(r'^output', views.output,name="output"),
 ]

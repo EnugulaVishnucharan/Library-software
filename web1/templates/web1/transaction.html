@@ -1,0 +1,21 @@
+{% extends "web1/header.html" %}
+{% block content %}
+<table>
+  <tr>
+    <th>book_id</th>
+    <th>book_name</th> 
+    <th>book_author</th>
+	<th>Taken_on</th>
+  </tr>
+  <tr>
+   {% for i in context1 %}
+  <tr>
+    <th>i.book_id</th>
+    <th>i.book_name</th> 
+    <th>i.book_author</th>
+	<th>i.Taken_on</th>
+  </tr>
+   {% endfor %}
+</table>
+
+{% endblock %}
